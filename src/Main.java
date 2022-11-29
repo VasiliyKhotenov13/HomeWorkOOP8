@@ -35,18 +35,19 @@ public class Main {
         System.out.println(listOfProduct);
         System.out.println();
 
-
-        ProductService productsBNP = new ProductService();
-        productsBNP.add(potato);
-        productsBNP.add(butter);
-        productsBNP.add(meatBeef);
-
         RecipesService itemS = new RecipesService();
-        Recipes beefNPotatoes = new Recipes("Картошка с мясом", productsBNP);
+        Recipes beefNPotatoes = new Recipes("Картошка с мясом");
+        beefNPotatoes.addProd(meatBeef, 2);
+        beefNPotatoes.addProd(butter, 1);
+        beefNPotatoes.addProd(potato, 5);
         itemS.addRecipes(beefNPotatoes);
+
         System.out.println(beefNPotatoes.toString());
+        System.out.println();
         System.out.println("Цена рецепта " + beefNPotatoes.getRecipeName() +
-                " составлет " + beefNPotatoes.getAllPrice() + " рублей!");
+                " составлет " + beefNPotatoes.fullPricesRecipes() + " рублей!");
+
+        System.out.println("______________________________________________________________");
 
         Set<Integer> number = new HashSet<>();
         Set<Integer> numberRemove = new HashSet<>();

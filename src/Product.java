@@ -51,7 +51,7 @@ public class Product {
     public String toString() {
         return "Продукт: " + nameProduct +
                 ", полная цена: " + cost +
-                ", вес: " + weight + '.';
+                ", вес: " + weight;
     }
 
     @Override

@@ -21,4 +21,9 @@ public class RecipesService {
         System.out.println("Из списка удалён рецепт: " + recipes);
         recipesSet.remove(recipes);
     }
+
+    @Override
+    public String toString() {
+        return recipesSet.toString().replace("[","").replace("]","" );
+    }
 }
